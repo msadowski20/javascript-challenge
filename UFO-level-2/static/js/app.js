@@ -15,13 +15,19 @@ function buildTable() {
 // Build table from data
 buildTable();
 
+// Create showAll function clear filters
+function showAll() {
+    var $rows = $('#ufo-table tr');
+    $rows.style.display = "none";
+};
+
 // Select refresh button and form
 // Assign buildTable function to refresh button
 var buttonRefresh = d3.select("#refresh-btn");
 var formRefresh = d3.select("#form-refresh");
 
-buttonRefresh.on("click", buildTable);
-formRefresh.on("submit", buildTable);
+buttonRefresh.on("click", showAll);
+formRefresh.on("submit", showAll);
 
 // Select Date button
 // Assign filterDate function to date button
