@@ -1,18 +1,32 @@
+// Create buildTable function
 var tableData = data;
 var tbody = d3.select("tbody");
 
-data.forEach((ufoSighting) => {
-    var row = tbody.append("tr");
-    Object.entries(ufoSighting).forEach(([key, value]) => {
-        var cell = row.append("td");
-        cell.text(value);
+function buildTable() {
+    data.forEach((ufoSighting) => {
+        var row = tbody.append("tr");
+        Object.entries(ufoSighting).forEach(([key, value]) => {
+            var cell = row.append("td");
+            cell.text(value);
     });
-});
+})
+};
 
-var button = d3.select("#filter-btn");
+// Build table from data
+buildTable();
+
+// Select refresh button and form
+// Assign buildTable function to refresh button
+var buttonRefresh = d3.select("#refresh-btn");
+
+buttonRefresh.on("click", buildTable);
+
+// Select Filter button
+// Assign filterTable function to date button
+var buttonFilter = d3.select("#filter-btn");
 var form = d3.select("#form");
 
-button.on("click", filterTable);
+buttonFilter.on("click", filterTable);
 form.on("submit", filterTable);
 
 function filterTable() {
@@ -38,5 +52,7 @@ function filterTable() {
     var filteredSightings = tableData.filter(sighting => sighting.datetime === inputValue);
     console.log(filteredSightings);
 };
+
+
 
 

@@ -30,26 +30,80 @@
         <div class="col-md-2">
           <aside class="filters">
             <div class="panel panel-default">
-              <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
-                <form id="form">
+                <form id="form-date">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
-                        <label for="date">Enter a City</label>
-                        <input class="form-control" id="city" type="text" placeholder="city">
-                        <label for="date">Enter a State</label>
-                        <input class="form-control" id="state" type="text" placeholder="nj">
-                        <label for="date">Enter a Country</label>
-                        <input class="form-control" id="country" type="text" placeholder="us">
-                        <label for="date">Enter a Shape</label>
-                        <input class="form-control" id="shape" type="text" placeholder="circle">
+                        <label for="date">Enter a Date (m/d/yyyy)</label>
+                        <input class="form-control" id="datetime" type="text">
+                        <button id="datetime-btn" type="button" class="btn btn-warning">Filter Date</button>
                       </li>
                     </ul>
                   </div>
-                  <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                </form>
+              </div>
+              <div class="panel-body">
+                <form id="form-city">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a City</label>
+                        <input class="form-control" id="city" type="text">
+                        <button id="city-btn" type="button" class="btn btn-warning">Filter City</button>
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-body">
+                <form id="form-state">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a State (ex. nj)</label>
+                        <input class="form-control" id="state" type="text">
+                        <button id="state-btn" type="button" class="btn btn-warning">Filter State</button>
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-body">
+                <form id="form-country">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a Country (ex. us)</label>
+                        <input class="form-control" id="country" type="text">
+                        <button id="country-btn" type="button" class="btn btn-warning">Filter Country</button>
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-body">
+                <form id="form-shape">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a Shape</label>
+                        <input class="form-control" id="shape" type="text">
+                        <button id="shape-btn" type="button" class="btn btn-warning">Filter Shape</button>
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+              <div class="panel-body">
+                <form id="form-refresh">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <button id="refresh-btn" type="button" class="btn btn-warning">Refresh Table</button>
+                      </li>
+                    </ul>
+                  </div>
                 </form>
               </div>
             </div>
