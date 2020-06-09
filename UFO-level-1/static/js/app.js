@@ -15,11 +15,28 @@ function buildTable() {
 // Build table from data
 buildTable();
 
+// Create showAll function clear filters
+function showAll() {
+    d3.event.preventDefault();
+
+    //clear input values
+    document.getElementById("datetime").value = "";
+
+    //refresh table
+    var table = document.getElementById("ufo-table");
+    var tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        tr[i].style.display = "";
+    };
+
+};
+
 // Select refresh button and form
 // Assign buildTable function to refresh button
 var buttonRefresh = d3.select("#refresh-btn");
 
-buttonRefresh.on("click", buildTable);
+buttonRefresh.on("click", showAll);
 
 // Select Filter button
 // Assign filterTable function to date button
@@ -39,20 +56,18 @@ function filterTable() {
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-            if (td.innerText === inputValue) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
+        if (tr[i].style.display == "") {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerText === inputValue) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
             }
-        }
-    }
-
-    var filteredSightings = tableData.filter(sighting => sighting.datetime === inputValue);
-    console.log(filteredSightings);
+        };
+    };
 };
-
 
 
 

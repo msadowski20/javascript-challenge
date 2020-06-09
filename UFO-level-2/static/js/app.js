@@ -17,8 +17,23 @@ buildTable();
 
 // Create showAll function clear filters
 function showAll() {
-    var $rows = $('#ufo-table tr');
-    $rows.style.display = "none";
+    d3.event.preventDefault();
+
+    //clear input values
+    document.getElementById("datetime").value = "";
+    document.getElementById("city").value = "";
+    document.getElementById("state").value = "";
+    document.getElementById("country").value = "";
+    document.getElementById("shape").value = "";
+
+    //refresh table
+    var table = document.getElementById("ufo-table");
+    var tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        tr[i].style.display = "";
+    };
+
 };
 
 // Select refresh button and form
@@ -47,12 +62,14 @@ function filterDate() {
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-            if (td.innerText === inputValue) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
+        if (tr[i].style.display == "") {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerText === inputValue) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
             }
         }
     };
@@ -76,12 +93,14 @@ function filterCity() {
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
-        if (td) {
-            if (td.innerText === inputValue) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
+        if (tr[i].style.display == "") {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                if (td.innerText === inputValue) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
             }
         }
     };
@@ -105,12 +124,14 @@ function filterState() {
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[2];
-        if (td) {
-            if (td.innerText === inputValue) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
+        if (tr[i].style.display == "") {
+            td = tr[i].getElementsByTagName("td")[2];
+            if (td) {
+                if (td.innerText === inputValue) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
             }
         }
     };
@@ -134,12 +155,14 @@ function filterCountry() {
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[3];
-        if (td) {
-            if (td.innerText === inputValue) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
+        if (tr[i].style.display == "") {
+            td = tr[i].getElementsByTagName("td")[3];
+            if (td) {
+                if (td.innerText === inputValue) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
             }
         }
     };
@@ -163,14 +186,15 @@ function filterShape() {
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[4];
-        if (td) {
-            if (td.innerText === inputValue) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
+        if (tr[i].style.display == "") {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                if (td.innerText === inputValue) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
             }
         }
     };
 };
-
